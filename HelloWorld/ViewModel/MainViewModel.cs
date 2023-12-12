@@ -63,7 +63,13 @@ namespace NoteApplicationMaui.ViewModel
         [RelayCommand]
         async void Tap(string sample)
         {
-            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={sample}");
+            //await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={sample}");
+            var mainViewModel = new MainViewModel(connectivity);
+            mainViewModel.Text = sample;
+            await Shell.Current.GoToAsync(nameof(DetailPage), new Dictionary<string, object>
+            {
+                [nameof(MainViewModel)] = mainViewModel
+            });
         }
     }
 }

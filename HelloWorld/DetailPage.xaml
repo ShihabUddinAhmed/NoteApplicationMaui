@@ -7,7 +7,7 @@
              Title="DetailPage">
     <VerticalStackLayout Padding="20">
         <Label 
-            Text="{Binding Text}"
+            Text="{Binding MainViewModel.Text}"
             FontSize="25"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />

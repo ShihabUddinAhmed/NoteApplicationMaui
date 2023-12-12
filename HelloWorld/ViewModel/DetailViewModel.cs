@@ -3,11 +3,11 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace NoteApplicationMaui.ViewModel
 {
-    [QueryProperty("Text", "Text")]
+    [QueryProperty(nameof(MainViewModel), "MainViewModel")]
     public partial class DetailViewModel : ObservableObject
     {
         [ObservableProperty]
-        string text;
+        MainViewModel mainViewModel;
 
         [RelayCommand]
         async Task GoBack()
